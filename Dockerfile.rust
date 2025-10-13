@@ -1,0 +1,23 @@
+FROM ubuntu:22.04
+
+# Atualiza a lista de pacotes e instala dependências essenciais
+RUN apt-get update && \
+    apt-get install -y curl build-essential && \
+    curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y && \
+    rm -rf /var/lib/apt/lists/*
+
+# Carrega as variáveis de ambiente do Rust para o shell atual
+RUN . "$HOME/.cargo/env"
+
+# Adiciona o cargo ao PATH explicitamente (útil para execuções não-interativas)
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Cria novo projeto Rust, adiciona dependências rand@0.8.5 e trpl@0.2.0, depois apaga o diretório
+RUN cargo new get-dependencies && \
+    cd get-dependencies && \
+    cargo add rand@0.8.5 trpl@0.2.0 && \
+    cd .. && \
+    rm -rf get-dependencies
+
+# Mantém o container aberto em um shell interativo
+CMD [ "bash" ]

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  rust:
+    build:
+      context: .
+      dockerfile: Dockerfile.rust
+    image: rust-dev:latest
+    container_name: rust-dev
+    tty: true
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
