@@ -14,7 +14,7 @@ docker compose up
 Para acessar o terminal do container em execução:
 
 ```sh
-docker compose exec app bash
+docker exec -it rust-dev bash
 ```
 
 Esses comandos irão iniciar o serviço e permitir que você entre no container para executar comandos no projeto rust.
