@@ -1,8 +1,8 @@
 FROM ubuntu:22.04
 
-# Atualiza a lista de pacotes e instala dependências essenciais
+# Atualiza a lista de pacotes e instala dependências essenciais, incluindo git
 RUN apt-get update && \
-    apt-get install -y curl build-essential && \
+    apt-get install -y curl build-essential git && \
     curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y && \
     rm -rf /var/lib/apt/lists/*
 

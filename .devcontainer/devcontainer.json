@@ -1,0 +1,21 @@
+{
+  "name": "rust-book (compose)",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "rust",
+  "workspaceFolder": "/workspace",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+
+  "remoteUser": "root",
+  "postCreateCommand": "rustc --version && cargo --version"
+}
