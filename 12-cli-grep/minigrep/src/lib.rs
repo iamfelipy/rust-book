@@ -1,11 +1,12 @@
 // lib.rs
 // Isso permite ter funções compartilhadas entre binário e biblioteca no mesmo projeto.
 use std::error::Error;
-use std::fs;
+use std::{env, fs};
 
 pub struct Config {
   pub query: String,
   pub file_path: String,
+  pub ignore_case: bool,
 }
 
 impl Config {                                  // string literal
@@ -18,7 +19,13 @@ impl Config {                                  // string literal
       let query = args[1].clone();
       let file_path = args[2].clone();
 
-      Ok(Config { query, file_path })
+      let ignore_case = env::var("IGNORE_CASE").is_ok();
+
+      Ok(Config { 
+        query, 
+        file_path, 
+        ignore_case, 
+      })
   }
 }
 
@@ -26,11 +33,17 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
   // O operador ? retorna imediatamente do bloco atual caso o valor seja Err (ou None), propagando o erro para o chamador; caso contrário, desempacota o valor de sucesso.
   let contents = fs::read_to_string(config.file_path)?;
 
-  for line in search(&config.query, &contents) {
-    println!("{line}");
-  }
+    let results = if config.ignore_case {
+        search_case_insensitive(&config.query, &contents)
+    } else {
+        search(&config.query, &contents)
+    };
 
-  Ok(())
+    for line in results {
+        println!("{line}");
+    }
+
+    Ok(())
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
@@ -45,19 +58,57 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
   results
 }
 
+pub fn search_case_insensitive<'a>(
+  query: &str,
+  contents: &'a str,
+) -> Vec<&'a str> {
+  let query = query.to_lowercase();
+  let mut results = Vec::new();
+
+  for line in contents.lines() {
+      //O método contains(&query) aceita &str, então &query (que é &String) é automaticamente convertido para &str por coerção de referência.
+      if line.to_lowercase().contains(&query) {
+          results.push(line);
+      }
+  }
+
+  results
+}
+
+
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn one_result() {
+    fn case_sensitive() {
         let query = "duct";
         let contents = "\
 Rust:
 safe, fast, productive.
-Pick three.";
+Pick three.
+Duct tape.";
 
         assert_eq!(vec!["safe, fast, productive."], search(query, contents));
     }
+
+    #[test]
+    fn case_insensitive() {
+      // AAA (Arrange-Act-Assert) resumo rápido:
+      // - Arrange: configurar os dados, variáveis ou contexto inicial do teste.
+      // - Act: executar a funcionalidade a ser testada.
+      // - Assert: verificar se o resultado é o esperado.
+      let query = "rUsT";
+      let contents = "\
+Rust:
+safe, fast, productive.
+Pick three.
+Trust me.";
+
+      assert_eq!(
+          vec!["Rust:", "Trust me."],
+          search_case_insensitive(query, contents)
+      );
+  }
 }
