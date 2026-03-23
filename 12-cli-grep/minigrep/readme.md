@@ -6,8 +6,9 @@
 #### descrição:
 - Criação de uma versão simplificada da ferramenta grep (busca global de strings e impressão das linhas correspondentes).
 
-#### caso de uso principal:
+#### funcionalidades:
 - Buscar uma string dentro de um arquivo específico e imprimir as linhas que a contém.
+- Realizar buscas que não diferenciam maiúsculas de minúsculas, controladas por uma variável de ambiente
 
 #### fundamentos:    
 - Utilização de recursos do terminal.
@@ -29,12 +30,14 @@
 
 ```sh
 # Executar o projeto localmente
-cargo run -- <termo_de_busca> <caminho_arquivo>
+$ cargo run -- <termo_de_busca> <caminho_arquivo>
 
 # Exemplo:
-cargo run -- query exemplo.txt
+  $ cargo run -- query exemplo.txt
+  # search case insensitive
+  $ IGNORE_CASE=1 cargo run -- to poem.txt
 
 # Rodar todos os testes do projeto
-cargo test
+$ cargo test
 ```
 
