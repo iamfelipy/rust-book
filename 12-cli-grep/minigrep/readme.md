@@ -36,6 +36,8 @@ $ cargo run -- <termo_de_busca> <caminho_arquivo>
   $ cargo run -- query exemplo.txt
   # search case insensitive
   $ IGNORE_CASE=1 cargo run -- to poem.txt
+  # direcionar stdout para um arquivo
+  $ cargo run -- to poem.txt > output.txt
 
 # Rodar todos os testes do projeto
 $ cargo test

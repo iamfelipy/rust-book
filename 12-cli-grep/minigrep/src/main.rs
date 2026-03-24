@@ -9,13 +9,13 @@ fn main() {
     // dbg!(args);
 
     let config = Config::build(&args).unwrap_or_else(|err| {
-        println!("Problem parsing arguments: {err}");
+        eprintln!("Problem parsing arguments: {err}");
         process::exit(1);
     });
 
     // Você consegue importar minigrep porque em projetos Rust, o próprio nome do pacote é usado como crate interno (a partir do nome no Cargo.toml). Assim, o código em src/lib.rs fica disponível via minigrep para o binário em src/main.rs
     if let Err(e) = minigrep::run(config) {
-        println!("Application error: {e}");
+        eprintln!("Application error: {e}");
         process::exit(1);
     }
 }
