@@ -5,5 +5,7 @@
     "14-more-about-cargo-and-crates.io/1-docs/Cargo.lock",
     "14-more-about-cargo-and-crates.io/2-art/Cargo.lock",
     "14-more-about-cargo-and-crates.io/3-add/Cargo.lock",
+    "14-more-about-cargo-and-crates.io/3-add/add_one/Cargo.lock",
+    "14-more-about-cargo-and-crates.io/3-add/adder/Cargo.lock",
   ]
 }
