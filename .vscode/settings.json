@@ -7,5 +7,6 @@
     "14-more-about-cargo-and-crates.io/3-add/Cargo.lock",
     "14-more-about-cargo-and-crates.io/3-add/add_one/Cargo.lock",
     "14-more-about-cargo-and-crates.io/3-add/adder/Cargo.lock",
+    "17-async-await-futures-streams/hello-async/Cargo.lock"
   ]
 }
