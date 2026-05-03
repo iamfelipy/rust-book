@@ -15,13 +15,13 @@ let opt: Option<String> = Some(String::from("Hello world!"));
 
 match opt {
     // borrowed: s = &String
-    Some(ref s) => println!("Some: {}", s),
+    Some(s) => println!("Some: {}", s),
     None => println!("None!"),
 }
-// 2 some recebe a posse de opt, então o println não pode mais usar opt
+// 2 some recebe a posse de "hello world", então o println não pode mais usar opt
 println!("{:?}", opt);
 
-//v3 - 
+
 // v3 - Matching by reference, opt is not moved
 
 let opt: Option<String> = Some(String::from("Hello world!"));
