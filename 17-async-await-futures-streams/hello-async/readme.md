@@ -1,0 +1,1 @@
+cargo run -- https://www.rust-lang.org https://www.google.com
