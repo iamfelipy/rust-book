@@ -70,3 +70,10 @@ introdução:
 - Em seguida, exploraremos um enum particularmente útil, chamado Option, que expressa que um valor pode ser algo ou nada.
 - Depois veremos como a correspondência de padrões na expressão match torna fácil executar código diferente para valores diferentes de um enum.
 - Por fim, cobriremos como a construção if let é outra forma conveniente e conciso disponível para lidar com enums no seu código.
+
+- resumo
+  - enums criam tipos personalizados
+  - o Option é um enum, vem por padrão e pode expressar a ideia de null
+  - match e if let permitem extrair o valor de enum que contem dados
+  - criar tipos personalizados para um api(função) garante segurança de tipos, o compilador garante que a função receba o tipo espearado
+  - Seus programas em Rust podem expressar conceitos em seu domínio
