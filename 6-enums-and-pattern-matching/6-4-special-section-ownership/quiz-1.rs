@@ -1,17 +1,24 @@
-// O código da imagem não compila porque retorna referência a variável local (`default`) que não vive o bastante.
-// Uma versão correta que preserva a ideia pode ser:
-
-fn make_separator<'a>(user_str: &'a str) -> String {
+//v1
+// não compila
+// default vive na stack, depois que a função termina default é desalocaddo
+// &default apontaria para memoria desalocada
+// você não pode retornar uma referência a uma variável local.
+// retorna ponteiro invalido
+fn make_separator(user_str: &str) -> &str {
     if user_str == "" {
-        "-".repeat(10)
+        let default = "=".repeat(10);
+        &default
     } else {
-        user_str.to_string()
+        user_str
     }
 }
 
-fn main() {
-    let inp1 = "";
-    let inp2 = "***";
-    println!("{}", make_separator(inp1));
-    println!("{}", make_separator(inp2));
+//v2 - solução 1
+fn make_separator(user_str: &str) -> String {
+    if user_str == "" {
+        let default = "=".repeat(10);
+        default
+    } else {
+        user_str.to_string()
+    }
 }
