@@ -26,9 +26,11 @@ mod back_of_house {
 pub fn eat_at_restaurant() {
     // Absolute path
     crate::front_of_house::hosting::add_to_waitlist();
+    // Sim, isso vai funcionar. O caminho absoluto crate::front_of_house::hosting::add_to_waitlist() está correto porque front_of_house é um módulo do crate e add_to_waitlist está acessível via pub use no submódulo hosting.
 
     // Relative path
     front_of_house::hosting::add_to_waitlist();
+    // Não vai funcionar. Como front_of_house está declarado como mod dentro de lib.rs, mas não está em escopo direto nesta função (nem foi feito use do módulo inteiro, apenas do hosting via pub use), o caminho relativo correto seria só hosting::add_to_waitlist().
 
     //
     // Peça um café da manhã no verão com torrada de centeio.
