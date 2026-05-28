@@ -95,13 +95,15 @@ introdução:
 
   - pacote
     - Um pacote pode conter vários crates binários e, opcionalmente, um crate de biblioteca. Conforme um pacote cresce, você pode extrair partes para crates separados que se tornam dependências externas. 
+    - Cargo.toml: estão instruções sobre como compilar, configurar dependências e definir metadados do projeto.
+    - Construir significa transformar seu código-fonte em um executável/binário ou biblioteca pronta para uso.
     - usar workspace, para projetos muito grandes, compostos por um conjunto de pacotes inter-relacionados que evoluem juntos
 
   - escondendo detalhes e criando uma api
     - outros códigos podem chamar seu código por meio de sua interface pública sem precisar saber como a implementação funciona.
   
-  - escopo
-    - escopo: o contexto aninhado no qual o código é escrito possui um conjunto de nomes definidos como "dentro do escopo".
+  - escopo: é o contexto no qual nomes (variáveis, funções, módulos, etc.) estão definidos e podem ser acessados no código. Ele determina onde um item é visível e utilizável, controlando o acesso e evitando conflitos de nomes.
+    - Contexto é o conjunto de informações, ambiente ou situação em que algo está inserido, influenciando seu significado, uso ou compreensão.
     - É possível criar escopos e alterar quais nomes estão dentro ou fora do escopo.
     
   - Rust possui uma série de recursos que permitem gerenciar a organização do seu código, incluindo quais detalhes são expostos, quais detalhes são privados e quais nomes pertencem a cada escopo dos seus programas. 
