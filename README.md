@@ -317,3 +317,41 @@ Definindo módulos para controlar o escopo e a privacidade.
     - src/front_of_house/hosting.rs src/front_of_house/hosting/mod.rs
 - 7.7 - resumo
   - Rust permite dividir um pacote em vários crates e um crate em módulos para que você possa referenciar itens definidos em um módulo a partir de outro módulo. Você pode fazer isso especificando caminhos absolutos ou relativos. Esses caminhos podem ser trazidos para o escopo com uma declaração use, permitindo que você use um caminho mais curto para múltiplos usos do item nesse escopo. O código do módulo é privado por padrão, mas você pode tornar definições públicas adicionando a palavra-chave pub.
+
+----
+#### chapter 8-common collections
+
+- 8.0 - introduction
+- 8.1 - Storing Lists of Values with Vectors
+  Armazenando listas de valores com vetores
+  - introduction
+  - Creating a New Vector
+  - Updating a Vector
+  - Reading Elements of Vectors
+  - Iterating Over the Values in a Vector - (Iterando sobre os valores em um vetor)
+  - quiz
+  - safely using iterators - (Utilizando iteradores com segurança)
+  - Using an Enum to Store Multiple Types
+  - Dropping a Vector Drops Its Elements
+  - quiz
+- 8.2 - Storing UTF-8 Encoded Text with Strings
+  - introduction
+  - What Is a String?
+  - Creating a New String
+  - Updating a String
+  - quiz
+  - Indexing into Strings
+  - Slicing Strings
+  - Methods for Iterating Over Strings
+  - Strings Are Not So Simple
+  - quiz
+- 8.3 - Storing Keys with Associated Values in Hash Maps The last of our common
+    Armazenando chaves com valores associados em Hash Maps A última das nossas coleções comuns
+  - introduction
+  - Creating a New Hash Map
+  - Accessing Values in a Hash Map
+  - Hash Maps and Ownership
+  - Updating a Hash Map
+- 8.4 - resumo
+- 8.5 - ownership challenge
+  - O Inventário de Propriedade é uma série de questionários que testam sua compreensão sobre propriedade em cenários do mundo real. Esses cenários são inspirados em perguntas comuns do StackOverflow sobre Rust. Questionário 6 perguntas
