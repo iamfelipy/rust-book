@@ -355,3 +355,34 @@ Definindo módulos para controlar o escopo e a privacidade.
 - 8.4 - resumo
 - 8.5 - ownership challenge
   - O Inventário de Propriedade é uma série de questionários que testam sua compreensão sobre propriedade em cenários do mundo real. Esses cenários são inspirados em perguntas comuns do StackOverflow sobre Rust. Questionário 6 perguntas
+
+----
+#### chapter  9 - error handling
+                  tratamentos de erros
+
+- 9.0 - introduction
+- 9.1 - Unrecoverable Errors with panic!
+  - panic
+  - panic abort
+  - backtrace
+- 9.2 - Recoverable Errors with Result
+  - introduction
+  - Matching on Different Errors
+  - quiz
+  - Shortcuts for Panic on Error: unwrap and expect
+  - Propagating Errors
+    - introduction
+    - A Shortcut for Propagating Errors: The ? Operator
+    - Where the ? Operator Can Be Used
+      - main
+      - Option
+      - converter entre Result e Option
+      - main with Result
+    - quiz
+- 9.3 - To panic! or Not to panic!
+  - introduction
+  - Examples, Prototype Code, and Tests
+  - Cases in Which You Have More Information Than the Compiler
+  - Guidelines for Error Handling
+  - Creating Custom Types for Validation
+  - resume
