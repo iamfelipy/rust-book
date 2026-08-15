@@ -386,3 +386,48 @@ Definindo módulos para controlar o escopo e a privacidade.
   - Guidelines for Error Handling
   - Creating Custom Types for Validation
   - resume
+
+----
+#### 10 - Generic Types, Traits, and Lifetimes - anki
+  - 10.0 - introduction
+    -  introduction
+    - Removing Duplication by Extracting a Function
+  - 10.1 - Generic Data Types
+    - introduction
+    - In Function Definitions
+    - In Struct Definitions
+    - In Enum Definitions
+    - In Method Definitions
+    - Performance of Code Using Generics
+    - quiz
+  - 10.2 - traits - defining shared behavior (Características: Definindo o Comportamento Compartilhado)
+    - introduction
+    - Defining a Trait
+    - Implementing a Trait on a Type
+    - Default Implementations
+    - quiz
+    - Traits as Parameters
+      - introduction
+      - Trait Bound Syntax
+      - Specifying Multiple Trait Bounds with the + Syntax
+      - Clearer Trait Bounds with where Clauses
+    - Returning Types That Implement Traits
+    - Using Trait Bounds to Conditionally Implement Methods
+    - conclusao
+    - quiz
+  - 10.3 - Validating References with Lifetimes
+    - Validating References with Lifetimes
+    - Preventing Dangling References with Lifetimes
+    - The Borrow Checker Ensures Data Outlives Its References
+    - Generic Lifetimes in Functions
+      - Lifetime Annotation Syntax
+      - Lifetime Annotations in Function Signatures
+      - quiz
+      - Thinking in Terms of Lifetimes
+    - Lifetime Annotations in Struct Definitions
+    - Lifetime Elision
+    - Lifetime Annotations in Method Definitions
+    - The Static Lifetime
+    - Generic Type Parameters, Trait Bounds, and Lifetimes Together
+  - ownership inventory
+
