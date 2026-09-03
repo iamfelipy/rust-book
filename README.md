@@ -431,3 +431,42 @@ Definindo módulos para controlar o escopo e a privacidade.
     - Generic Type Parameters, Trait Bounds, and Lifetimes Together
   - ownership inventory
 
+----
+
+#### 11 - writing automated tests
+  - introduction
+  - how to write tests
+    - introduction
+    - the anatomy of a test function
+    - Checking Results with the assert! Macro
+    - Testing Equality with the assert_eq! and assert_ne! Macros
+    - Adding Custom Failure Messages
+    - Checking for Panics with should_panic
+    - Using Result<T, E> in Tests
+    - quiz
+  - Controlling How Tests Are Run
+    - introduction
+    - Running Tests in Parallel or Consecutively
+    - Showing Function Output
+    - Running a Subset of Tests by Name
+      - executar todos os testes em paralelo
+      - Running Single Tests
+      - Filtering to Run Multiple Tests
+      - onde os testes devem ficar?
+    - Ignoring Some Tests Unless Specifically Requested
+    - quiz
+  - Test Organization
+    - introduction
+    - unit tests
+      - introduction
+      - The Tests Module and #[cfg(test)]
+      - Testing Private Functions
+    - integration tests
+      - introduction
+      - The tests Directory
+      - Submodules in Integration Tests
+      - Integration Tests for Binary Crates
+  - resumo
+
+----
+
